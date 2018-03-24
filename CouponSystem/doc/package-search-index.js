@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"com.example.demo.beans"},{"l":"com.example.demo.dao"},{"l":"com.example.demo.enums"},{"l":"com.example.demo.exceptions"},{"l":"com.example.demo.facades"},{"l":"com.example.demo.main"},{"l":"com.example.demo.Repo"},{"l":"com.example.demo.utilites"}]

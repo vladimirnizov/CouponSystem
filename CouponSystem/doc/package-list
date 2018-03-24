@@ -1,0 +1,9 @@
+com.example.demo
+com.example.demo.beans
+com.example.demo.dao
+com.example.demo.enums
+com.example.demo.exceptions
+com.example.demo.facades
+com.example.demo.main
+com.example.demo.Repo
+com.example.demo.utilites
