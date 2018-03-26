@@ -273,43 +273,55 @@ public class CouponSystemApplicationTests {
 	
 	/**
 	 * Create coupon
-	 * @throws ParseException 
+	 * @exception ParseException 
 	 */
 	@Test
-	public void CreateCoupon() throws ParseException
+	public void CreateCoupon() 
 	{
 		CompanyFacade comf = comp.login("Comp1", "12345", ClientType.COMPANY);
 		 Date endDate=new Date();
 		 SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-		 endDate = format.parse("01.01.2019");
+		 try {
+			endDate = format.parse("01.01.2019");
+		} catch (ParseException e) {
+			System.out.println("invalid format of date");
+		}
 		comf.createCoupon(new Coupon("Title1", new Date(), endDate, 10, CouponType.FOOD, "blabla", 20.5d, "path"));
 		Assert.assertNotNull(cr.getCouponByTitle("Title1", cr.findCompByName("Comp1").getId()));
 	}
 	/**
 	 * Create coupon
-	 * @throws ParseException 
+	 * @exception ParseException 
 	 */
 	@Test
-	public void CreateCoupon2() throws ParseException
+	public void CreateCoupon2() 
 	{
 		CompanyFacade comf = comp.login("Comp1", "12345", ClientType.COMPANY);
 		 Date endDate=new Date();
 		 SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-		 endDate = format.parse("01.01.2019");
+		 try {
+			endDate = format.parse("01.01.2019");
+		} catch (ParseException e) {
+			System.out.println("invalid format of date");
+		}
 		comf.createCoupon(new Coupon("Title2", new Date(), endDate, 10, CouponType.FOOD, "blabla", 20.5d, "path"));
 		Assert.assertNotNull(cr.getCouponByTitle("Title2", cr.findCompByName("Comp1").getId()));
 	}
 	/**
 	 * Create coupon
-	 * @throws ParseException 
+	 * @exception ParseException 
 	 */
 	@Test
-	public void CreateCoupon3() throws ParseException
+	public void CreateCoupon3() 
 	{
 		CompanyFacade comf = comp.login("Comp1", "12345", ClientType.COMPANY);
 		 Date endDate=new Date();
 		 SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-		 endDate = format.parse("01.01.2019");
+		 try {
+			endDate = format.parse("01.01.2019");
+		} catch (ParseException e) {
+			System.out.println("invalid format of date");
+		}
 		comf.createCoupon(new Coupon("Title3", new Date(), endDate, 10, CouponType.FOOD, "blabla", 20.5d, "path"));
 		Assert.assertNotNull(cr.getCouponByTitle("Title3", cr.findCompByName("Comp1").getId()));
 	}
@@ -327,10 +339,9 @@ public class CouponSystemApplicationTests {
 	
 	/**
 	 * Update coupon
-	 * @throws ParseException 
 	 */
 	@Test
-	public void updateCoupon() throws ParseException 
+	public void updateCoupon() 
 	{
 		CompanyFacade comf = comp.login("Comp1", "12345", ClientType.COMPANY);
 		 Coupon c = cr.getCouponByTitle("Title2", cr.findCompByName("Comp1").getId());
