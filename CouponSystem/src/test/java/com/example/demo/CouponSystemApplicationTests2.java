@@ -193,8 +193,8 @@ public class CouponSystemApplicationTests2 {
 		} catch (ParseException e) {
 			System.out.println("invalid format of date");
 		}
-		comf.createCoupon(new Coupon("Title1", new Date(), endDate, 10, CouponType.FOOD, "blabla", 20.5d, "path"));
-		Assert.assertNotNull(cr.getCouponByTitle("Title1", cr.findCompByName("Comp1").getId()));
+		comf.createCoupon(new Coupon("absd", new Date(), endDate, 10, CouponType.FOOD, "blabla", 20.5d, "path"));
+		Assert.assertNotNull(cr.getCouponByTitle("absd", cr.findCompByName("Comp1").getId()));
 	}
 	/**
 	 * Create coupon

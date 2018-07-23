@@ -90,6 +90,10 @@ public class CompanyDBDAO implements CompanyDAO {
 		ArrayList<Company> c = (ArrayList<Company>) compRepo.findAll();
 		ConnectionPool.getInstance().returnConnection(connection);
 		return c;
+//		Connection connection = ConnectionPool.getInstance().getConnection();
+//		ArrayList<Company> c = (ArrayList<Company>) compRepo.findAll();
+//		ConnectionPool.getInstance().returnConnection(connection);
+//		return c;
 	}
 	/**
 	 * 
@@ -131,7 +135,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	 */
 	@Override
 	public Company loggedCompany() {
-		return getCompany(id);
+		return getCompany(this.id);
 	}
 	/**
 	 * 

@@ -1,6 +1,8 @@
 package com.example.demo.beans;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
  * 
  * @author vladimirnizovtsev
@@ -29,11 +33,13 @@ public class Customer {
 	@Column (name = "Password")
 	private String pass;
 
-	@ManyToMany(fetch=FetchType.EAGER, cascade = {CascadeType.DETACH , CascadeType.MERGE, CascadeType.REFRESH})
-	@JoinTable(name = "Customer_Coupon",
-				joinColumns = @JoinColumn(name = "Customer_ID"),
-				inverseJoinColumns = @JoinColumn(name = "Coupon_ID"))
-	private Collection<Coupon> coupons;
+	
+	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH }) //
+	@JoinTable(name = "Customer_Coupon", joinColumns = @JoinColumn(name = "customer_id"), inverseJoinColumns = @JoinColumn(name = "coupon_id"))
+	@JsonIgnore
+	private List<Coupon> coupons = new ArrayList<>();
+
+
 
 	public Customer() {
 		
@@ -106,7 +112,7 @@ public class Customer {
 	/**
 	 * @param coupons to set
 	 */
-	public void setCoupons(Collection<Coupon> coupons) {
+	public void setCoupons(List<Coupon> coupons) {
 		this.coupons = coupons;
 	}
 

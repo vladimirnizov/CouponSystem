@@ -2,7 +2,7 @@ package com.example.demo.main;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-
+import org.springframework.stereotype.Component;
 
 import com.example.demo.enums.ClientType;
 import com.example.demo.facades.CouponClientFacade;
@@ -18,6 +18,7 @@ import com.example.demo.utilites.DailyService;
  * @author vladimirnizovtsev
  *
  */
+@Component
 @Scope("singleton")
 public class CouponsSystem {
 

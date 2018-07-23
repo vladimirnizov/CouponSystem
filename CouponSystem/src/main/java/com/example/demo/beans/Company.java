@@ -1,6 +1,8 @@
 package com.example.demo.beans;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
  * 
  * @author vladimirnizovtsev
@@ -31,9 +35,14 @@ public class Company {
 	@Column (name = "EMAIL")
 	private String email;
 	
-	@OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn (name = "company_id")
-	private Collection<Coupon> coupons;
+	
+
+
+	
+	@OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH , CascadeType.REMOVE})
+	@JoinColumn(name = "company_id")
+	@JsonIgnore
+	private List<Coupon> coupons;
 	
 	public Company(){}
 
@@ -117,7 +126,7 @@ public class Company {
 	/**
 	 * @param  coupons to set
 	 */
-	public void setCoupons(Collection<Coupon> coupons) {
+	public void setCoupons(List<Coupon> coupons) {
 		this.coupons = coupons;
 	}
 

@@ -17,6 +17,10 @@ import com.example.demo.enums.CouponType;
  *
  */
 public interface CompanyRepo extends CrudRepository<Company, Integer> {
+	
+	
+
+	
 	/**
 	 * 
 	 * @param companyName to get company by name from DB

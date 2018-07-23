@@ -1,0 +1,120 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+body{
+	margin: 0;
+	padding: 0;
+    background-image: url('http://szzljy.com/data/9/full/2/3/2/273293.jpg');
+
+	color: rgb(245, 242, 238);
+	font-family: Arial;
+	font-size: 12px;
+}
+
+h2{
+	padding-left:50px
+}
+
+
+
+
+
+ .login{
+  
+  margin-right:25%;
+    margin-left: 25%;
+
+
+
+	
+}  
+
+ .login input[type=text]{
+	width: 100%;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.login input[type=password]{
+	width: 100%;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+} 
+
+
+.login button[type=submit]{
+	width: 100%;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login button[type=submit]:hover{
+	opacity: 0.8;
+}
+
+.login button[type=submit]:active{
+	opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+
+
+
+.textform {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+
+
+.container {
+    padding: 16px;
+}
+
+
+
+
+
+

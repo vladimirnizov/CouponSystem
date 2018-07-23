@@ -2,6 +2,7 @@ package com.example.demo.beans;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,6 +16,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import com.example.demo.enums.CouponType;
 
@@ -57,12 +62,11 @@ public class Coupon {
 	private String image;
 	
 	
+
 	
-	@ManyToMany(fetch=FetchType.EAGER, cascade = {CascadeType.DETACH , CascadeType.MERGE, CascadeType.REFRESH})
-	@JoinTable(name = "Customer_Coupon",
-				joinColumns = @JoinColumn(name = "Coupon_ID"),
-				inverseJoinColumns = @JoinColumn(name = "Customer_ID"))
-	private Collection<Customer> customers;
+	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinTable(name = "Customer_Coupon", joinColumns = @JoinColumn(name = "coupon_id"), inverseJoinColumns = @JoinColumn(name = "customer_id"))	
+	private List<Customer> customers;
 	
 	public Coupon() {
 		
@@ -221,14 +225,14 @@ public class Coupon {
 	/**
 	 * @return customers
 	 */
-	public Collection<Customer> getCustomers() {
+	public List<Customer> getCustomers() {
 		return customers;
 	}
 
 	/**
 	 * @param customers to set
 	 */
-	public void setCustomers(Collection<Customer> customers) {
+	public void setCustomers(List<Customer> customers) {
 		this.customers = customers;
 	}
 

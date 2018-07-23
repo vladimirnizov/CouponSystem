@@ -33,6 +33,9 @@ public class FacadeFactory {
 	 */
 	public CouponClientFacade login(String name, String pass, ClientType type)
 	{
+		if(name==null&&pass==null)
+			return null;
+		
 		switch(type){
 		case ADMIN:
 			return adminFacade.login(name, pass, type);

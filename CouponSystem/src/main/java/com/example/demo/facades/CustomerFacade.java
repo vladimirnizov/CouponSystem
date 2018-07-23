@@ -57,6 +57,15 @@ public class CustomerFacade implements CouponClientFacade{
 	 * 
 	 * @return array list of coupons
 	 */
+	public ArrayList<Coupon> getAllCoupons() 
+	{
+		return couponDBDAO.getCoupons();
+	}
+	
+	/**
+	 * 
+	 * @return array list of coupons
+	 */
 	public ArrayList<Coupon> getPurchasedCoupons() 
 	{
 		return customerDBDAO.getCoupons();
@@ -113,6 +122,14 @@ public class CustomerFacade implements CouponClientFacade{
 	}
 
 	
+	/**
+	 * 
 
+	 * @return Customer
+	 */
+	public Customer getCust() 
+	{
+		return customerDBDAO.getLoginCustomer();
+	}
 
 }
