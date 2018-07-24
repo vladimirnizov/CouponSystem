@@ -1,0 +1,37 @@
+<div class="wrapper wrapper-style3">
+  <article id="Customers">
+
+<div class="container-fluid myContainer">
+    <!-- Header -->
+    <header>
+        <h2>Here is a list of customers:</h2>
+        <span>To add a new customer click <button class="btn btn-info" routerLink="/newCustomer">Here</button> , to make some changes or remove customer click on the choosed customer from list.</span>
+      </header>
+  <div class="container">
+    <!-- Customers Table -->
+    <input class="form-control" id="myInput2" type="text" placeholder="Type something in the input field to search the table for ID, name or password:">
+    
+    <div style="overflow-x:auto;" class="myTablee">
+    <table id="myTab" >
+          <th>ID</th>
+          <th>Name</th>
+          <th>Password</th>
+         
+          <!-- tBody -->
+          
+          <tbody id="myTable2">
+        <tr *ngFor="let c of customers; let i = index" (click)="getCustomer(c)">
+          <td>{{c.id}}</td>
+          <td>{{c.customerName}}</td>
+          <td>{{c.pass}}</td>
+          
+        </tr>
+        </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+ 
+
+</article>
+</div>

@@ -1,0 +1,39 @@
+
+  <div>
+
+    <header>
+        <h2>Here is a list of companies:</h2>
+        <span>To add a new company click <button class="btn btn-info" routerLink="/newCompany">Here</button> , 
+          to make some changes or remove company click on the choosed company from list.</span>
+      </header>
+
+      
+      <div class="container">
+
+<!-- Companies Table -->
+<input class="form-control" id="myInput" type="text" placeholder="Type something in the input field to search the table for Id, name, password or email">
+<div style="overflow-x:auto;" class="myTable">
+<table id="myTab">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Password</th>
+      <th>Email</th>
+      
+      
+      <!-- tBody -->
+      <tbody id="myTable">
+    <tr *ngFor="let c of companies; let i = index" (click)="getCompany(c)">
+      <td >{{c.id}}</td>
+      <td>{{c.companyName}}</td>
+      <td>{{c.pass}}</td>
+      <td>{{c.email}}</td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
