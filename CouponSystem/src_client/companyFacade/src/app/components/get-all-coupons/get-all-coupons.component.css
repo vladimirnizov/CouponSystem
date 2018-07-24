@@ -1,0 +1,63 @@
+#myTab {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+#myTab {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+#myTab td, #myTab th {
+    border: 1px solid #f5f2f2;
+    padding: 8px;
+    
+}
+
+
+
+#myTab tr:hover {background-color: #ddd;}
+
+#myTab th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(238, 82, 147);
+    color: #f2f2f2
+    
+}
+
+.form-control{
+background-color: rgb(202, 232, 240)
+}
+
+.myTable{
+    margin-top: 70px;
+    }
+
+    .section1 {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 60px;
+      }
+    
+      
+      .section2 {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 20px;
+      }
+      
+      .example-margin {
+        margin: 0 10px;
+      }
+
+      mat-slider {
+        width: 400px;
+      }

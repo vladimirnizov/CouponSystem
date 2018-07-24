@@ -1,0 +1,93 @@
+<div class="container">
+
+    <div class="example-form">
+        <mat-form-field class="example-form-field">
+                <input matInput type="text" placeholder="Title:" [(ngModel)]="title">
+                <button mat-button *ngIf="title" matSuffix mat-icon-button aria-label="Clear" (click)="title=''">
+                  <mat-icon>clear</mat-icon>
+                </button>
+              </mat-form-field>
+    </div>
+
+    <div class="example-form">
+            <div class="example-form-field-date">
+                Start date:<br>
+                    <input name="startDate" class="form-control" placeholder="Start Date"
+                            type="date" id="inputStartDate" [(ngModel)]="startDate"/>
+                </div>
+        </div>
+
+        <div class="example-form">
+                <div class="example-form-field-date">
+                    End date:<br>
+                        <input name="endDate" class="form-control" placeholder="End Date"
+                                type="date" id="inputEndDate" [(ngModel)]="endDate"/>
+                    </div>
+            </div>
+
+            <div class="example-form">
+                    <mat-form-field class="example-form-field">
+                            <input matInput type="number" placeholder="Amount:" [(ngModel)]="amount">
+                            <button mat-button *ngIf="amount" matSuffix mat-icon-button aria-label="Clear" (click)="amount=''">
+                              <mat-icon>clear</mat-icon>
+                            </button>
+                          </mat-form-field>
+                </div>
+
+                <div class="example-form">
+                        <mat-form-field class="example-form-field">
+                                <mat-select 
+                                placeholder="Type:"
+                    [(ngModel)]="type"
+                    [(value)]="type">
+                      <mat-option >None</mat-option>
+                      <mat-option value="FOOD">FOOD</mat-option>
+                      <mat-option value="RESTOURANTS">RESTOURANTS</mat-option>
+                      <mat-option value="HEALTH">HEALTH</mat-option>
+                      <mat-option value="SPORTS">SPORTS</mat-option>
+                      <mat-option value="CAMPING">CAMPING</mat-option>
+                      <mat-option value="TRAVELLING">TRAVELLING</mat-option>
+                      <mat-option value="CARS">CARS</mat-option>
+                      <mat-option value="ELECTRIC">ELECTRIC</mat-option>
+                    </mat-select>
+                              </mat-form-field>
+                    </div>
+
+                    <div class="example-form">
+                            <mat-form-field class="example-form-field">
+                                    <input matInput type="message" placeholder="Message:" [(ngModel)]="message">
+                                    <button mat-button *ngIf="message" matSuffix mat-icon-button aria-label="Clear" (click)="message=''">
+                                      <mat-icon>clear</mat-icon>
+                                    </button>
+                                  </mat-form-field>
+                        </div>
+
+                        <div class="example-form">
+                                <mat-form-field class="example-form-field">
+                                        <input matInput type="number" placeholder="Price:" [(ngModel)]="price">
+                                        <button mat-button *ngIf="price" matSuffix mat-icon-button aria-label="Clear" (click)="price=''">
+                                          <mat-icon>clear</mat-icon>
+                                        </button>
+                                      </mat-form-field>
+                            </div>
+
+
+                            <div class="example-form">
+                                    <mat-form-field class="example-form-field">
+                                            <input matInput type="text" placeholder="Image link:" [(ngModel)]="image">
+                                            <button mat-button *ngIf="image" matSuffix mat-icon-button aria-label="Clear" (click)="image=''">
+                                              <mat-icon>clear</mat-icon>
+                                            </button>
+                                          </mat-form-field>
+                                </div>
+
+                                <div class="col-sm-offset-2 col-sm-10">
+                                        <button mat-fab *ngIf="title!= null &&  title!= '' && startDate!= null && endDate!= null && amount!= null && amount>0 && type!= null 
+                                                      && message!= null && message!= '' && price!=null && price>0 && image!= null && image !=''"  (click)="createCoupon()">Create </button>
+                                    </div>
+         
+
+                                
+ 
+</div>
+

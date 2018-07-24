@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Company Page</title>
+  <base href="/company_page/index.html">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
+
+  <script>
+      $(document).ready(() => {
+        var home = $('.home').hide();
+    
+                $('#navigation li:nth-child(1)').click(() =>{
+              // showing stuff
+              home.hide();
+            });
+            $('#navigation li:nth-child(2)').click(() =>{
+              // showing stuff
+              home.hide();
+            });
+            $('#navigation li:nth-child(3)').click(() =>{
+              // showing stuff
+              home.fadeIn(100);
+            });
+            $('#navigation li:nth-child(4)').click(() =>{
+              // showing stuff
+              home.hide();
+            });
+      });</script>
+
+</head>
+<body>
+    <app-root></app-root>
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

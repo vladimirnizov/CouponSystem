@@ -1,0 +1,74 @@
+<div style="overflow-x:auto;" class="myTable">
+   
+
+    <div class="container">
+
+                <section class="section1">
+                    <mat-checkbox class="example-margin" [(ngModel)]="checked" (click)="getCoupons()">Advanced search</mat-checkbox>
+                  </section>
+            
+                
+              
+                        <section >
+                            <div *ngIf="checked">
+                              Price limit:
+                              <br>
+                              <mat-slider
+                              thumbLabel
+                              [displayWith]="formatLabel"
+                              [(ngModel)]="price"
+                              (click)="getCoupons()"
+                              min="1"
+                              max="10000"></mat-slider>
+                              <br>
+
+                              Type of coupon:<br>
+                <mat-form-field>
+                    <mat-select 
+                    [(ngModel)]="type"
+                    [(value)]="type">
+                      <mat-option (click)="getCoupons()">None</mat-option>
+                      <mat-option (click)="getCoupons()" value="FOOD">FOOD</mat-option>
+                      <mat-option (click)="getCoupons()" value="RESTOURANTS">RESTOURANTS</mat-option>
+                      <mat-option (click)="getCoupons()" value="HEALTH">HEALTH</mat-option>
+                      <mat-option (click)="getCoupons()" value="SPORTS">SPORTS</mat-option>
+                      <mat-option (click)="getCoupons()" value="CAMPING">CAMPING</mat-option>
+                      <mat-option (click)="getCoupons()" value="TRAVELLING">TRAVELLING</mat-option>
+                      <mat-option (click)="getCoupons()" value="CARS">CARS</mat-option>
+                      <mat-option (click)="getCoupons()" value="ELECTRIC">ELECTRIC</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  
+                  <p>You selected: {{type}}</p>
+            
+                            </div>
+            
+                            
+                            
+                        </section>
+
+  <table id="myTab2">
+        <th>Coupon</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Type</th>
+        <th>Message</th>
+        <th>Price</th>
+        
+        <!-- tBody -->
+        <tbody id="myTable">
+      <tr *ngFor="let coup of coupons; let i = index" (click)="getCoupon(coup)">
+        <td >{{coup._title}}</td>
+        <td>{{coup._startDate}}</td>
+        <td>{{coup._endDate}}</td>
+        <td>{{coup._type}}  </td>
+        <td>{{coup._message}} </td>
+        <td>{{coup._price}} </td>
+  
+      </tr>
+    </tbody>
+  </table>
+  </div>
+ 
+  
+  </div>

@@ -1,0 +1,45 @@
+<div class="container">
+
+        <div class="example-form">
+                <div class="example-form-field-date">
+                    End date:<br>
+                        <input name="endDate" class="form-control" placeholder="End Date"
+                                type="date" id="inputEndDate" [(ngModel)]="endDate"/>
+                    </div>
+            </div>
+
+            <div class="example-form">
+                    <mat-form-field class="example-form-field">
+                            <input matInput type="message" placeholder="Message:" [(ngModel)]="message">
+                            <button mat-button *ngIf="message" matSuffix mat-icon-button aria-label="Clear" (click)="message=''">
+                              <mat-icon>clear</mat-icon>
+                            </button>
+                          </mat-form-field>
+                </div>
+
+                <div class="example-form">
+                        <mat-form-field class="example-form-field">
+                                <input matInput type="number" placeholder="Price:" [(ngModel)]="price">
+                                <button mat-button *ngIf="price" matSuffix mat-icon-button aria-label="Clear" (click)="price=''">
+                                  <mat-icon>clear</mat-icon>
+                                </button>
+                              </mat-form-field>
+                    </div>
+
+                    <div class="example-form">
+                            <mat-form-field class="example-form-field">
+                                    <input matInput type="text" placeholder="Image link:" [(ngModel)]="image">
+                                    <button mat-button *ngIf="image" matSuffix mat-icon-button aria-label="Clear" (click)="image=''">
+                                      <mat-icon>clear</mat-icon>
+                                    </button>
+                                  </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-offset-2 col-sm-10">
+                                <button mat-fab (click)="updateCoupon()">Update </button>
+                            </div>
+
+</div>
+
+
+
